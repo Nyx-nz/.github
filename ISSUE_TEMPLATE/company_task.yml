@@ -1,0 +1,83 @@
+name: "Company Task"
+description: "Administrative or operational task not tied to a specific job or project"
+labels: ["company-task", "operations"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Company Task
+        Business-level stuff that needs doing: accounts, subscriptions, compliance, admin, etc.
+
+  - type: input
+    id: task_title
+    attributes:
+      label: Task summary
+      description: "One-liner of what needs to happen"
+      placeholder: "e.g. Set up new business bank account with ANZ"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Details
+      description: "What exactly needs to be done? Include any steps, requirements, or context."
+      placeholder: |
+        Need to open a new everyday business account for X.
+        Requirements: two signatories, online banking access...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - "Finance / Banking"
+        - "Email / Communications"
+        - "Subscriptions / Licensing"
+        - "Legal / Compliance"
+        - "HR / People"
+        - "Infrastructure / Office"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: owner
+    attributes:
+      label: Who is responsible?
+      description: "Person or role that owns getting this done"
+      placeholder: "e.g. Tony, Accounts team, TBD"
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Due date
+      placeholder: "e.g. 2026-04-01, End of month, No rush"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "Low - Get to it when we can"
+        - "Medium - Should be done soon"
+        - "High - Blocking something or time-sensitive"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Blockers
+      description: "Is this waiting on anything? Does anything else depend on this?"
+      placeholder: "e.g. Need ABN number first, waiting on landlord response"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: "Links, reference numbers, contact details, whatever else is relevant"

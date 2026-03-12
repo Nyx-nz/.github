@@ -1,0 +1,79 @@
+name: "Internal Tool / Portal"
+description: "Automate, improve, or build tooling for an internal process"
+labels: ["internal-tooling", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Internal Tool / Portal
+        Something we do internally that could be automated, made more robust, or just less painful.
+
+  - type: textarea
+    id: current_process
+    attributes:
+      label: Current process
+      description: "How is this done today? Be honest about the jank."
+      placeholder: "Currently we manually copy data from X into a spreadsheet, then email it to..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: pain_points
+    attributes:
+      label: Pain points
+      description: "What's wrong with the current approach? Why does this need fixing?"
+      placeholder: |
+        - Takes 2 hours every week
+        - Prone to human error
+        - Only one person knows how to do it
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired_outcome
+    attributes:
+      label: Desired outcome
+      description: "What does the improved version look like?"
+      placeholder: "A dashboard that automatically pulls data from X and..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: who_uses
+    attributes:
+      label: Who uses this?
+      description: "Which team members or roles interact with this process?"
+      placeholder: "e.g. Operations team, all staff, just the accounts person"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often is this process run?
+      options:
+        - "Daily"
+        - "Weekly"
+        - "Monthly"
+        - "Ad-hoc / as needed"
+        - "One-off setup"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "Low - Would be nice eventually"
+        - "Medium - Causing friction, should fix soon"
+        - "High - Actively wasting significant time or causing errors"
+        - "Critical - Process is failing or unsustainable"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tech_notes
+    attributes:
+      label: Technical notes
+      description: "Any thoughts on how to build this, systems involved, constraints, etc."
