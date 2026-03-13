@@ -1,97 +1,35 @@
 name: "Integration Work"
-description: "Build or configure an integration between systems, platforms, or devices"
+description: "Connect systems, platforms, or devices"
 labels: ["integration", "triage"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Integration Work
-        Connecting systems together. What talks to what, and why.
-
   - type: input
-    id: source_system
+    id: source
     attributes:
       label: Source system
-      description: "The system sending data or triggering the action"
-      placeholder: "e.g. Xero, internal CRM, IoT device"
+      placeholder: "e.g. Xero, CRM, IoT device"
     validations:
       required: true
 
   - type: input
-    id: target_system
+    id: target
     attributes:
       label: Target system
-      description: "The system receiving data or being acted upon"
-      placeholder: "e.g. Internal CRM, accounting platform, webhook endpoint"
+      placeholder: "e.g. Internal CRM, accounting platform"
     validations:
       required: true
 
   - type: textarea
     id: purpose
     attributes:
-      label: What should this integration do?
-      description: "Describe the data flow or behaviour in plain language"
-      placeholder: "When an invoice is created in Xero, sync the customer and line items to our internal CRM so that..."
-    validations:
-      required: true
-
-  - type: textarea
-    id: data_flow
-    attributes:
-      label: Data / Event details
-      description: "What data moves, in which direction, and when?"
-      placeholder: |
-        - Direction: Xero -> CRM (one-way)
-        - Trigger: New invoice created
-        - Data: Customer name, invoice total, line items
-        - Frequency: Real-time / webhook preferred
+      label: What should it do?
 
   - type: dropdown
-    id: direction
-    attributes:
-      label: Integration direction
-      options:
-        - "One-way (Source -> Target)"
-        - "Two-way (bidirectional sync)"
-        - "Event-driven (trigger/response)"
-        - "Not sure yet"
-    validations:
-      required: true
-
-  - type: textarea
-    id: api_info
-    attributes:
-      label: Known API / connectivity info
-      description: "Any known API docs, auth methods, rate limits, existing connectors?"
-      placeholder: |
-        - Xero uses OAuth 2.0, REST API
-        - CRM has a basic REST API with API key auth
-        - No existing middleware in place
-
-  - type: dropdown
-    id: estimated_complexity
+    id: complexity
     attributes:
       label: Estimated complexity
+      default: 3
       options:
-        - "Simple - Known APIs, straightforward mapping"
-        - "Medium - Some unknowns, transformation logic needed"
-        - "Complex - Multiple systems, custom logic, error handling"
-        - "Unknown - Needs investigation"
-    validations:
-      required: true
-
-  - type: textarea
-    id: error_handling
-    attributes:
-      label: Error handling / Edge cases
-      description: "What happens when things go wrong? Any known gotchas?"
-      placeholder: |
-        - What if the target system is down?
-        - Duplicate detection needed?
-        - Rate limiting concerns?
-
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional context
-      description: "Who requested this, any deadline, related issues, etc."
+        - "Simple - known APIs, straightforward"
+        - "Medium - some unknowns"
+        - "Complex - multiple systems, custom logic"
+        - "Unknown - needs investigation"

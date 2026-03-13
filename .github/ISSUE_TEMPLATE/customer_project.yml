@@ -1,87 +1,39 @@
 name: "Customer Project"
-description: "New project work for a customer requiring scoping and build-out"
+description: "New customer work needing scoping"
 labels: ["customer-project", "needs-scoping"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Customer Project
-        A customer wants something built. Capture what we know so far and what needs fleshing out.
-
   - type: input
     id: customer
     attributes:
-      label: Customer / Organisation
-      placeholder: "e.g. Acme Corp"
+      label: Customer
     validations:
       required: true
-
-  - type: input
-    id: contact
-    attributes:
-      label: Customer contact
-      description: "Primary point of contact for this project"
-      placeholder: "Name - email/phone"
 
   - type: textarea
     id: summary
     attributes:
-      label: Project summary
-      description: "High-level description of what the customer wants. Capture their words, not just our interpretation."
-      placeholder: "Customer wants a custom portal that allows their staff to..."
-    validations:
-      required: true
-
-  - type: textarea
-    id: requirements
-    attributes:
-      label: Known requirements
-      description: "What do we know so far? List anything concrete."
-      placeholder: |
-        - Must integrate with their existing X system
-        - Needs to support Y users
-        - They mentioned wanting Z functionality
+      label: What do they want?
     validations:
       required: true
 
   - type: textarea
     id: unknowns
     attributes:
-      label: Open questions / Unknowns
-      description: "What still needs to be clarified with the customer?"
-      placeholder: |
-        - What authentication method do they use?
-        - Volume expectations?
-        - Deadline constraints?
+      label: What don't we know yet?
 
   - type: dropdown
-    id: estimated_size
+    id: size
     attributes:
       label: Estimated size
-      description: "Gut feel at this stage"
+      default: 3
       options:
-        - "Small - Days"
-        - "Medium - Weeks"
-        - "Large - Months"
-        - "Unknown - Needs scoping"
-    validations:
-      required: true
+        - "Days"
+        - "Weeks"
+        - "Months"
+        - "No idea yet"
 
   - type: input
     id: deadline
     attributes:
-      label: Target deadline
-      description: "Any date pressure from the customer?"
-      placeholder: "e.g. End of Q2, ASAP, no hard deadline"
-
-  - type: textarea
-    id: tech_notes
-    attributes:
-      label: Technical notes
-      description: "Any early thoughts on stack, architecture, constraints, or gotchas"
-
-  - type: textarea
-    id: commercial
-    attributes:
-      label: Commercial notes
-      description: "Quote status, budget range, billing arrangement, or anything relevant"
+      label: Deadline
+      placeholder: "e.g. End of Q2, ASAP, none"

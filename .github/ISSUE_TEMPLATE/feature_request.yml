@@ -1,62 +1,26 @@
 name: "Feature Request"
-description: "Suggest a new feature or improvement to an existing one"
+description: "Suggest something new or improved"
 labels: ["enhancement", "triage"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Feature Request
-        Got an idea? Lay it out here.
-
   - type: textarea
     id: problem
     attributes:
-      label: What problem does this solve?
-      description: "Describe the pain point or gap this addresses"
-      placeholder: "Currently we have to manually... / Users keep asking for..."
+      label: What's the problem?
     validations:
       required: true
 
   - type: textarea
     id: solution
     attributes:
-      label: Proposed solution
-      description: "How do you think this should work? Be as specific as you like."
-    validations:
-      required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives considered
-      description: "Any other approaches you've thought about or ruled out?"
-
-  - type: dropdown
-    id: scope
-    attributes:
-      label: Scope
-      options:
-        - "Small - Minor tweak or config change"
-        - "Medium - New functionality within existing feature"
-        - "Large - Significant new feature or rework"
-    validations:
-      required: true
+      label: What do you want?
 
   - type: dropdown
     id: priority
     attributes:
-      label: Suggested priority
-      description: "How urgent is this from your perspective?"
+      label: Priority
+      default: 1
       options:
         - "Nice to have"
-        - "Should have (next quarter)"
-        - "Must have (soon)"
-        - "Critical (blocking other work)"
-    validations:
-      required: true
-
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional context
-      description: "Screenshots, mockups, links to related issues, examples from other tools, etc."
+        - "Should have soon"
+        - "Must have"
+        - "Blocking other work"
